@@ -1,13 +1,15 @@
 import java.util.Random;
 
-public class BubbleSort {
+public class BubbleSortOptimized {
 	//
 
 	public static void main(String[] args){
 
 		//Initializing array of random numbers
-		int[] array = new int[20];
+		
+		int[] array = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
 
+		//int[] array = new int[20];
 		//Generating random numbers
 		Random rand = new Random();
 
@@ -24,16 +26,26 @@ public class BubbleSort {
 
 		//Bubble Sort;
 		//Time complexcity §°(n^2)
-		for(int rounds = 0; rounds < array.length; rounds++){
+		boolean isSwap = true;
+		int rounds = 0;
+		while(isSwap == true){
+
+			isSwap = false;
 
 			for(int index = 1; index < array.length - rounds; index++){
-
+				
+				System.out.println(index);
+				
 				if(array[index-1] > array[index]){
 					swap(array, index-1, index);
+					isSwap = true;
 				}
 			}
 
+			rounds++;
+
 		}
+
 
 		//Display array
 		for(int n: array){
